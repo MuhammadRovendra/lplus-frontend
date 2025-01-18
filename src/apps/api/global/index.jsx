@@ -1,0 +1,27 @@
+const API_ENDPOINT = {
+  ADD_USER: "/user/create",
+  GET_USER:`/user/get`,
+  GET_USER_BY_ID: (id) => `/user/get/${id}`,
+  RENAME: (id) => `/user/rename/${id}`,
+  REPASSWORD: (id) => `/user/repassword/${id}`,
+  UPDATE_STATUS_USER: (id) =>`/user/edit/status/${id}`,
+  DELETE_USER: (id) => `/user/delete/${id}`,
+  LOGIN_USER: "/user/login",
+  LOGOUT_USER: "/user/logout",
+  ADD_CATEGORY:`/category/create`,
+  GET_CATEGORY:`/kategori/get`,
+  ADD_NEWS:`/news/create`,
+  UPDATE_STATUS_NEWS: (id) => `/news/edit-status/${id}`,
+  GET_NEWS:`/news/get`,
+  GET_NILAI:`/nilai/get`,
+  GET_NILAI_BY_USER: (id) => `/nilai/get/${id}`,
+  UPDATE_NILAI_BY_USER: (id) => `/nilai/update-nilai/${id}`,
+  UPDATE_LIKE_BY_USER: (id) => `/nilai/update-like/${id}`,
+  GET_MATERI_CATEGORY: (id) => `/materi/get-category/${id}`,
+  GET_MATERI_ID: (id) => `/materi/get/${id}`,
+  GET_NEWS_BY_STATUS: (page) =>`/news/get-status?status=Publish&page=${page}`,
+  GET_NEWS_BY_ID: (id) =>`/news/get/${id}`,
+  DELETE_NEWS: (id) =>`/news/delete/${id}`,
+}
+
+export default API_ENDPOINT
