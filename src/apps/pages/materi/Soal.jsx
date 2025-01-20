@@ -45,7 +45,7 @@ const SoalPage = () => {
         }
       })
     }
-    return window.location.href = `http://localhost:5173/course-page`
+    return window.location.href = `https://lplus-frontend.vercel.app/course-page`
   }
 
   const handlePreviousPage = () => {
