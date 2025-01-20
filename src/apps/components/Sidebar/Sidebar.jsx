@@ -70,6 +70,21 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     return () => document.removeEventListener('keydown', keyHandler);
   }, []);
 
+  const handleLogout = async () => {
+    try {
+      const data = ''
+      const response = await ServiceUser.logoutUser(data)
+      console.log(response)
+      localStorage.removeItem('accessToken')
+      // SweetAlertService.showSuccess("Success", response.message)
+      navigate('/')
+      window.location.reload();
+    } catch (error) {
+      console.log(error)
+      // SweetAlertService.showError("Error", error.message)
+    }
+  }
+
   useEffect(() => {
     getUser()
   }, [])
@@ -120,15 +135,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         </nav>
         {/* <!-- Sidebar Menu --> */}
       </div>
-      <NavLink
-        to=""
+      <button
+        onClick={handleLogout}
         className={`group relative flex items-center gap-2.5 rounded-md py-2 px-4 mx-6 mt-auto mb-5 font-medium text-bodydark1 duration-300 ease-in-out bg-red-700 hover:bg-red-400 dark:hover:bg-meta-4 ${
         pathname.includes('calendar') && 'bg-graydark dark:bg-meta-4'
         }`}
       >
         <MdLogout />
         Logout
-      </NavLink>
+      </button>
     </aside>
   );
 };
