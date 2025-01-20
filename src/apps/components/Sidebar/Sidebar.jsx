@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation, useParams } from 'react-router-dom';
+import { NavLink, useLocation, useParams, useNavigate } from 'react-router-dom';
 
 import { FaAddressCard, FaClipboardList } from "react-icons/fa";
 import { GoPasskeyFill } from 'react-icons/go';
@@ -8,6 +8,7 @@ import { MdLogout } from 'react-icons/md';
 import ServiceUser from '../../api/service/User.service';
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
+  const navigate = useNavigate()
   const {idUser} = useParams()
 
   const [user, setUser] = useState({})
