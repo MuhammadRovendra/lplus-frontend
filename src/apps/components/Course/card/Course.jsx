@@ -52,9 +52,9 @@ const CourseItem = ({dataCourse}) => {
   }
   return(
     <>
-      <div className="w-full h-auto lg:h-screen bg-unguTua overflow-hidden py-3 px-3">
+      <div className="w-full h-auto lg:h-auto bg-unguTua overflow-hidden py-3 px-3">
         <p className="text-2xl uppercase text-white font-bold border-b-4 border-kuning">{dataCourse.LEVEL} <span className="text-kuning">Python</span></p>
-        <div className="h-5/6 mt-4 flex justify-center md:justify-start items-center flex-wrap gap-10 px-4">
+        <div className="h-5/6 mt-4 flex justify-center md:justify-center items-center flex-wrap gap-10 px-4">
         {
           statusLike.map((item, index) => {
             // console.log(item)
