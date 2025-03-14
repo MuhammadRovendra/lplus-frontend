@@ -52,7 +52,7 @@ const SoalPage = () => {
     window.location.href = `/course-page/contoh-code-page/${idMateri}`
   }
   return(
-    <div className="w-full h-screen flex flex-col justify-between bg-blue-gray-900">
+    <div className="w-full h-auto flex flex-col justify-between bg-blue-gray-900">
       <Navbar />
       <Soal />
       <div>

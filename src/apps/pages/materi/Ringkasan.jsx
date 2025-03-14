@@ -17,11 +17,11 @@ const RingkasanPage = () => {
     window.location.href = `/course-page/video-page/${idMateri}`
   }
   return(
-    <div className="w-full h-full flex flex-col justify-between bg-blue-gray-900">
+    <div className="w-full h-screen flex flex-col justify-between bg-blue-gray-900">
       <Navbar />
       <RingkasanMateri />
       <div>
-        <div className="w-full text-black font-bold py-3 flex justify-between px-10 bg-black-2 mt-2">
+        <div className="w-full text-black font-bold py-3 flex justify-between px-10 bg-black-2">
           <button className="px-8 py-2 rounded-xl bg-kuning" onClick={handlePreviousPage}>
             Previous
           </button>
