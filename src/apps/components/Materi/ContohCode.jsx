@@ -39,7 +39,7 @@ const ContohCode = () => {
       <div className="w-auto h-fit mx-auto flex flex-col">
         <div className="bg-abuAbu px-10 max-w-200 py-6 mt-18 flex flex-col gap-3 rounded-xl">
           <p className="text-blue-gray-8 font-bold text-start">Example</p>
-          <div className="bg-gray-2 w-100 p-5 rounded-md">
+          <div className="bg-gray-2 max-w-200 p-5 rounded-md">
           {teks.split("\n").map((line, index) => (
               <p key={index}>{line}</p>
             ))}
