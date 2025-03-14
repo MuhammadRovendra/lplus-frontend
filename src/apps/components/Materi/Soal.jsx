@@ -76,7 +76,7 @@ const Soal = () => {
     <div className="w-full h-full bg-red-50 py-20 px-5 sm:px-20">
       <p className="text-3xl font-bold text-black">LATI<span className="text-unguMuda">HAN</span></p>
       <div className="w-fit h-fit mx-auto flex flex-col">
-        <div className=" px-10 py-6 mt-18 flex flex-col gap-3 rounded-xl">
+        <div className="px-0 sm:px-0 py-6 mt-18 flex flex-col gap-3 rounded-xl">
           <p className="text-blue-8 font-bold text-start">Silahkan kerjakan Soal dibawah ini !</p>
           <div className="bg-abuAbu max-w-200 p-5 rounded-md">
           {teks.split("\n").map((line, index) => (
