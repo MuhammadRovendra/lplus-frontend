@@ -78,7 +78,7 @@ const Soal = () => {
       <div className="w-fit h-fit mx-auto flex flex-col">
         <div className=" px-10 py-6 mt-18 flex flex-col gap-3 rounded-xl">
           <p className="text-blue-gray-8 font-bold text-start">Silahkan kerjakan Soal dibawah ini !</p>
-          <div className="bg-abuAbu w-100 p-5 rounded-md">
+          <div className="bg-abuAbu max-w-200 p-5 rounded-md">
           {teks.split("\n").map((line, index) => (
               <p key={index}>{renderTextWithInput(line)}</p>
             ))}
