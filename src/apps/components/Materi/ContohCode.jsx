@@ -36,7 +36,7 @@ const ContohCode = () => {
   return (
     <div className="w-full h-full bg-red-50 py-20 px-5 sm:px-20">
       <p className="text-3xl font-bold text-black">CONTOH <span className="text-unguMuda">CODE</span></p>
-      <div className="w-fit h-fit mx-auto flex flex-col">
+      <div className="w-auto h-fit mx-auto flex flex-col">
         <div className="bg-abuAbu px-10 max-w-200 py-6 mt-18 flex flex-col gap-3 rounded-xl">
           <p className="text-blue-gray-8 font-bold text-start">Example</p>
           <div className="bg-gray-2 w-100 p-5 rounded-md">
