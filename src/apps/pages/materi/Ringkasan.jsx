@@ -21,7 +21,7 @@ const RingkasanPage = () => {
       <Navbar />
       <RingkasanMateri />
       <div>
-        <div className="w-full text-black font-bold py-3 flex justify-between px-10 bg-black-2">
+        <div className="w-full text-black font-bold py-3 flex justify-between px-10 bg-black-2 mt-2">
           <button className="px-8 py-2 rounded-xl bg-kuning" onClick={handlePreviousPage}>
             Previous
           </button>
