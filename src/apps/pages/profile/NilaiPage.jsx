@@ -40,7 +40,7 @@ const NilaiPage = () => {
         <div className="p-5" ref={contentRef}>
           <div className="w-full flex flex-row items-center justify-between">
             <div className="flex flex-col">
-              <p className="text-xl font-bold">Transkip Nilai</p>
+              <p className="text-xl font-bold mt-12 md:mt-10">Transkip Nilai</p>
               <div className="text-sm ms-1 my-2">
                 <p>ID: {idUser}</p>
                 <p>Nama: {name}</p>

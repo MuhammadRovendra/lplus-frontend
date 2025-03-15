@@ -33,7 +33,7 @@ const RepasswordPage = () => {
   return (
     <>
       <Layout>
-        <h1 className="text-xl font-bold">Edit Password</h1>
+        <h1 className="text-xl font-bold mt-12 md:mt-10">Edit Password</h1>
         <div className="flex flex-col gap-4 py-5 bg-white rounded-lg min-h-full justify-center items-center">
           <div className="flex flex-col gap-2 text-sm">
             <p className="text-xs font-bold">Enter your old password</p>
