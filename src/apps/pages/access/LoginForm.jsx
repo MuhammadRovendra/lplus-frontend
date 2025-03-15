@@ -37,7 +37,7 @@ const LoginForm = () => {
   return(
     <div className="flex justify-center items-center w-screen h-screen bg-cover" style={{ backgroundImage: `url(${IMAGES.bg2})`}}>
       <div className="bg-unguTua flex flex-col sm:flex-row shadow-lg rounded-xl">
-        <div className="flex flex-col gap-4 px-10 bg-white rounded-lg min-h-full justify-center">
+        <div className="flex flex-col gap-4 px-10 py-7 md:py-0 bg-white rounded-lg min-h-full justify-center">
           <h2 className="text-2xl font-bold">Login</h2>
           <div className="flex flex-col gap-2 text-sm">
             <p className="text-xs">Enter your email address</p>
@@ -72,6 +72,7 @@ const LoginForm = () => {
             src={IMAGES.gambar2} 
             style={{ height: '400px' }}
             alt="Illustrasi" 
+            className="hidden md:flex"
           />
       </div>
     </div>

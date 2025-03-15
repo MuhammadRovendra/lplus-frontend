@@ -40,7 +40,7 @@ const SignUpForm = () => {
   }
 
   return(
-    <div className="flex justify-center items-center w-screen h-screen" style={{ backgroundImage: `url(${IMAGES.bg2})`, backgroundPositionY: '25px' }}>
+    <div className="flex justify-center items-center w-screen h-screen" style={{ backgroundImage: `url(${IMAGES.bg2})`}}>
       <div className="bg-unguTua flex flex-col sm:flex-row shadow-lg rounded-xl">
         <div className="flex flex-col gap-4 px-10 py-8 bg-white rounded-lg min-h-full justify-center">
           <h2 className="text-2xl font-bold">Register</h2>
@@ -97,6 +97,7 @@ const SignUpForm = () => {
             src={IMAGES.gambar2} 
             style={{ height: '400px' }}
             alt="Illustrasi" 
+            className="hidden md:flex"
           />
       </div>
     </div>
