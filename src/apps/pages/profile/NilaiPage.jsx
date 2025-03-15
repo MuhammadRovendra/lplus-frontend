@@ -45,7 +45,7 @@ const NilaiPage = () => {
                 <p>ID: {idUser}</p>
                 <p>Nama: {name}</p>
                 <p>Email: {email}</p>
-                <p>Nilai Total: {nilai}</p>
+                <p>Nilai Total: {nilai.toFixed(2)}</p>
               </div>
             </div>
             <button type="button" onClick={() => reactToPrintFn()} className="bg-green-500 hover:bg-green-600 px-2 py-2 text-white font-bold rounded">
