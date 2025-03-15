@@ -55,7 +55,7 @@ const NilaiPage = () => {
           <TableNilai dataNilai={materi}/>
           <div className="w-full bg-white flex flex-row items-center py-3 justify-between px-3 mt-5 rounded shadow-default">
             <p>Total Nilai:</p>
-            <p>{nilai}</p>
+            <p>{nilai.toFixed(2)}</p>
           </div>
         </div>
       </Layout>
