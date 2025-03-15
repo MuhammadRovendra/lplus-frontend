@@ -4,7 +4,7 @@ import Footer1 from "../../components/Footer/index copy"
 // import Soal from "../../components/Materi/Soal"
 import RingkasanMateri from "../../components/Materi/Ringkasan"
 // import VideoMateri from "../../components/Materi/Video"
-import Navbar from "../../components/Navbar"
+import Navbar from "../../components/Navbar/index1111"
 
 
 const RingkasanPage = () => {
