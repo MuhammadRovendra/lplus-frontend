@@ -110,10 +110,10 @@ const Navbar = () => {
             tokenAcc === null || tokenAcc === undefined ? 
             <div className="ms-10 flex flex-row gap-5">
               <button className="bg-purple-800 hover:bg-purple-700 px-3 py-2 rounded-md" onClick={()=>navigate('/login-page')}>
-                Sign in
+                Login
               </button>
               <button className="hover:text-purple-500" onClick={()=>navigate('/sign-up-page')}>
-                Sign up
+                Register
               </button>
             </div>
             : 
@@ -177,10 +177,10 @@ const Navbar = () => {
             tokenAcc === null || tokenAcc === undefined ? 
             <div className="flex flex-row gap-5 mt-5 justify-center">
               <button className="bg-purple-800 hover:bg-unguMuda px-3 py-2 rounded-md" onClick={()=>navigate('/login-page')}>
-                Sign in
+                Login
               </button>
               <button className="hover:text-purple-500" onClick={()=>navigate('/sign-up-page')}>
-                Sign up
+                Register
               </button>
             </div>
             : 

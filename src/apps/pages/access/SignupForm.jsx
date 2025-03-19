@@ -86,7 +86,7 @@ const SignUpForm = () => {
           </div>
           <div>
             <button className="bg-unguMuda w-full text-white py-1 rounded-2xl mt-1" onClick={handleRegister}>
-              Sign Up
+              Register
             </button>
           </div>
           <div>

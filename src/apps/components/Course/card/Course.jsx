@@ -64,7 +64,7 @@ const CourseItem = ({dataCourse}) => {
                 <img className={`${item.STATUS == 1 ? "saturate-0" : "saturate-100"}`} src={item.DETAILS.IMAGES.replace("dl=0", "raw=1")} alt={item.DETAILS.NAMA_MATERI} />
               </div>
               <div className="flex flex-col">
-                <p className="font-semibold text-center mt-2">{item.DETAILS.NAMA_MATERI}</p>
+                <p className="font-semibold text-center mt-2">{`${index+1} `}{item.DETAILS.NAMA_MATERI}</p>
                 <div className="flex flex-row gap-3 justify-center mt-2 font-semibold text-sm">
                   {
                     item.LIKE === true 
