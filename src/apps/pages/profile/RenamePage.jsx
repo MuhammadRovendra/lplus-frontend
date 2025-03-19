@@ -30,7 +30,7 @@ const RenamePage = () => {
   return (
     <>
       <Layout>
-        <h1 className="text-xl font-bold mt-12 md:mt-10">Edit Your Name</h1>
+        <h1 className="text-xl font-bold mt-12 md:mt-10">Rename</h1>
         <div className="flex flex-col gap-4 p-10 bg-white rounded-lg min-h-full justify-center items-center">
           <div className="flex flex-col gap-2 text-sm">
             <p className="text-xs font-bold">Enter your new name</p>

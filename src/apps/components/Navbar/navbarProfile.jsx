@@ -293,7 +293,7 @@ const NavbarProfile = () => {
         path: `/profile-page/rename/${idUser}`
       },
       {
-        name: "Re-password",
+        name: "Change Password",
         icon: GoPasskeyFill,
         path: `/profile-page/repassword/${idUser}`
       },

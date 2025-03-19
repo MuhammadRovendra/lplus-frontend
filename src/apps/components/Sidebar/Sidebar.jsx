@@ -25,7 +25,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       path: `/profile-page/rename/${idUser}`
     },
     {
-      name: "Re-password",
+      name: "Change Password",
       icon: GoPasskeyFill,
       path: `/profile-page/repassword/${idUser}`
     },
