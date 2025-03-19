@@ -1,0 +1,40 @@
+/* CSS untuk halaman NilaiPage */
+.title-print {
+  font-size: 1.25rem; /* Ukuran teks */
+  font-weight: bold;
+  text-align: left;
+}
+
+.logo-print {
+  width: 50px; /* Ukuran logo */
+  height: auto;
+}
+
+/* Saat dicetak, teks akan ke tengah */
+@media print {
+  .title-print {
+    text-align: center !important;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .tanggal-cetak {
+    display: block !important;
+    text-align: right;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .logo-print {
+    display: block !important;
+    width: 50px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    margin-left: 3px;
+  }
+
+  .btn-print {
+    display: none !important;
+  }
+}
