@@ -63,7 +63,7 @@ const NilaiPage = () => {
                 <p>ID: {idUser}</p>
                 <p>Nama: {name}</p>
                 <p>Email: {email}</p>
-                <p>Nilai Total: {nilai}</p>
+                <p>Nilai Total: {nilai.toFixed(2)}</p>
               </div>
             <button type="button" onClick={handlePrint} className="bg-green-500 btn-print hover:bg-green-600 px-2 py-2 text-white h-fit font-bold rounded">
               Print
@@ -73,7 +73,7 @@ const NilaiPage = () => {
           <TableNilai dataNilai={materi}/>
           <div className="w-full bg-white flex flex-row items-center py-3 justify-between px-3 mt-5 rounded shadow-default">
             <p>Total Nilai:</p>
-            <p>{nilai}</p>
+            <p>{nilai.toFixed(2)}</p>
           </div>
           <p className="hidden tanggal-cetak">Tanggal Cetak: {tanggalCetak}</p>
         </div>
