@@ -5,11 +5,12 @@ import Navbar from "../components/Navbar"
 
 const Course = () => {
   return(
-    <>
-      <Navbar />
+    <div className="">
+      <Navbar transparant />
       <CourseComponent />
       <Footer />
-    </>
+    </div>
+    
   )
 }
 

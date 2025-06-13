@@ -10,8 +10,8 @@ import { useState } from "react"
 import SharePopup from "../../PopUp"
 
 const CourseItem = ({dataCourse}) => {
-  // console.log(dataCourse)
-  const [statusLike, setStatusLike] = useState(dataCourse.MATERI)
+  console.log(dataCourse)
+  const [statusLike, setStatusLike] = useState(dataCourse)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [shareLink, setShareLink] = useState('')
 
@@ -55,7 +55,7 @@ const CourseItem = ({dataCourse}) => {
       <div className="w-full h-auto lg:h-auto bg-unguTua overflow-hidden py-3 px-3">
         <p className="text-2xl uppercase text-white font-bold border-b-4 border-kuning">{dataCourse.LEVEL} <span className="text-kuning">Python</span></p>
         <div className="h-5/6 mt-4 flex justify-center md:justify-center items-center flex-wrap gap-10 px-4">
-        {
+        {/* {
           statusLike.map((item, index) => {
             // console.log(item)
             return (
@@ -97,7 +97,7 @@ const CourseItem = ({dataCourse}) => {
               </div>
             </div>
           )})
-        }
+        } */}
         </div>
         {isPopupOpen && (
           <SharePopup

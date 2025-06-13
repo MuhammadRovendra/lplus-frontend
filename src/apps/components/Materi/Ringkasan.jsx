@@ -25,7 +25,7 @@ const RingkasanMateri = () => {
     getMateri()
   }, [])
   return (
-    <div className="w-full h-full bg-blue-gray-50 py-20 px-5 sm:px-20">
+    <div className="w-full h-auto bg-blue-gray-50 py-20 px-5 sm:px-20">
       <p className="text-3xl font-bold text-black">RINGKASAN <span className="text-unguMuda">MATERI</span></p>
       <div className="flex flex-col items-center mt-20">
         <div className="h-full flex flex-col justify-center gap-2">

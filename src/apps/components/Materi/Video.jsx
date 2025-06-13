@@ -5,18 +5,14 @@ import ServiceMateri from "../../api/service/Materi.service"
 const VideoMateri = () => {
   const {idMateri} = useParams()
   const [videoId, setVideoId] = useState('')
-  const [jawaban, setJawaban] = useState('')
   // console.log(idMateri)
 
   const getMateri = async () => {
     try {
       const dataMateri = await ServiceMateri.getMateriById(idMateri)
       const videoUrl = dataMateri.data.VIDEO
-      const jawaban = dataMateri.data.JAWABAN
       const videoID = videoUrl.match(/v=([^&]*)/)[1];
-      console.log(jawaban)
       setVideoId(videoID)
-      setJawaban(videoID)
     } catch (error) {
       console.log(error)
     }

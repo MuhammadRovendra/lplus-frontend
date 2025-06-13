@@ -3,6 +3,7 @@ import { useState } from "react"
 import { IMAGES } from "../../assets";
 import ServiceUser from "../../api/service/User.service"
 import SweetAlertService from "../../helper/sweetalertService";
+import { jwtDecode } from "jwt-decode";
 // import SweetAlertService from "../../helper/sweetalertService"
 
 // import { IMAGES } from "../../assets"
@@ -22,10 +23,15 @@ const LoginForm = () => {
         PASSWORD: password
       }
       const response = await ServiceUser.loginUser(data)
-      console.log(response)
+      // console.log(response)
       if(response.status === true){
         localStorage.setItem('accessToken', response.data.accessToken)
         SweetAlertService.showSuccess('Success', 'Selamat datang')
+        const decodeToken = jwtDecode(response.data.accessToken)
+        console.log(decodeToken)
+        if(decodeToken.ROLE === 'Admin'){
+          return navigate('/Admin/dashboard-page')
+        }
         return navigate('/')
       }
       return SweetAlertService.showError('Error', response.message)

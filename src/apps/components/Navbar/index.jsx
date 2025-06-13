@@ -3,12 +3,13 @@ import { IMAGES } from "../../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import ServiceUser from "../../api/service/User.service";
-import { FaDiscourse, FaRegUser } from "react-icons/fa";
+import { FaBookOpen, FaDiscourse, FaRegUser } from "react-icons/fa";
 import { MdLogout, MdHome, MdOutlineInfo, MdPermContactCalendar } from "react-icons/md";
 import { jwtDecode } from "jwt-decode";
 
 import { X } from "lucide-react";
 import { motion } from "framer-motion";
+import { IoSpeedometer } from "react-icons/io5";
 // import { jwtDecode } from "jwt-decode";
 
 const Navbar = () => {
@@ -40,13 +41,13 @@ const Navbar = () => {
   ]
 
   const handleNavigation = (path) => {
-    const token = localStorage.getItem('accessToken');
-    if (!token && path === '/course-page') {
-      alert('Anda harus login terlebih dahulu untuk mengakses halaman ini.');
-      navigate('/login-page');
-      window.location.reload()
-      return;
-    }
+    // const token = localStorage.getItem('accessToken');
+    // if (!token && path === '/course-page') {
+    //   alert('Anda harus login terlebih dahulu untuk mengakses halaman ini.');
+    //   navigate('/login-page');
+    //   window.location.reload()
+    //   return;
+    // }
     navigate(path);
     window.location.reload()
   };
@@ -84,7 +85,7 @@ const Navbar = () => {
     }
   }, [])
   return (
-    <div className=" absolute w-full bg-black-2 text-white py-3 px-5 flex justify-center items-center">
+    <div className="relative w-full bg-black-2 text-white py-3 px-5 flex justify-center items-center">
       <div className="container flex flex-row justify-between items-center">
         <div>
           <a href="/">
@@ -221,6 +222,7 @@ const Navbar = () => {
 
 const PopUp = () => {
   const [idUser, setIdUser] = useState('')
+  const [role, setRole] = useState('')
   const navigate = useNavigate()
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -272,6 +274,8 @@ const PopUp = () => {
       if(token){
         const decode = jwtDecode(token)
         const id = decode.IDUSER
+        const role = decode.ROLE
+        setRole(role)
         setIdUser(id)
       }
     }, [])
@@ -299,12 +303,31 @@ const PopUp = () => {
           dropdownOpen === true ? 'block' : 'hidden'
         }`}
       >
+        {
+          role === 'Admin' ?
+          <Link 
+            to={`/Admin/dashboard-page`}
+            className="flex items-center gap-3.5 py-4 px-4 text-sm rounded-t-md font-medium duration-300 ease-in-out hover:bg-unguMuda lg:text-base"
+          >
+            <IoSpeedometer className="text-lg" />
+            Dashboard
+          </Link>
+          :
+          null
+        }
         <Link 
-          to={`/profile-page/nilai/${idUser}`}
+          to={`/profile-page/my-learning/${idUser}`}
           className="flex items-center gap-3.5 py-4 px-4 text-sm rounded-t-md font-medium duration-300 ease-in-out hover:bg-unguMuda lg:text-base"
         >
           <FaRegUser className="text-lg" />
           Profile
+        </Link>
+        <Link 
+          to={`/my-learning/${idUser}`}
+          className="flex items-center gap-3.5 py-4 px-4 text-sm rounded-t-md font-medium duration-300 ease-in-out hover:bg-unguMuda lg:text-base"
+        >
+          <FaBookOpen className="text-lg" />
+          My Learning
         </Link>
         <hr />
         <button 

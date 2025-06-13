@@ -2,17 +2,18 @@ import { useEffect, useRef, useState } from "react"
 import TableNilai from "../../components/Table/TableNilai"
 import Layout from "./Layout"
 import ServiceNilai from "../../api/service/Nilai.service"
-import { useParams } from "react-router-dom"
+// import { useParams } from "react-router-dom"
 import { useReactToPrint } from 'react-to-print'
 import { jwtDecode } from "jwt-decode"
 import '../../assets/css/nilaiPage.css'
 import { IMAGES } from "../../assets"
 
 const NilaiPage = () => {
-  const { idUser } = useParams()
+  // const { idUser } = useParams()
   const [materi, setMateri] = useState([])
   const [nilai, setNilai] = useState(0)
   const [name, setName] = useState('')
+  const [idUser, setIdUser] = useState('')
   const [email, setEmail] = useState('')
   const [tanggalCetak, setTanggalCetak] = useState('');
 
@@ -21,9 +22,11 @@ const NilaiPage = () => {
 
   const getKategori = async () => {
     try {
-      const dataUser = await ServiceNilai.getNilai(idUser)
+      const token = jwtDecode(localStorage.getItem('accessToken')).IDUSER
+      const dataUser = await ServiceNilai.getNilai(token)
+      console.log(dataUser)
       setNilai(dataUser.data[0].NILAI)
-      setMateri(dataUser.data[0].PROGRES[0].MATERI)
+      setMateri(dataUser.data[0].MATERI)
     } catch (error) {
       console.log(error)
     }
@@ -44,9 +47,10 @@ const NilaiPage = () => {
   useEffect(() => {
     const token = localStorage.getItem('accessToken')
     const decode = jwtDecode(token)
+    setIdUser(decode.IDUSER)
     setName(decode.NAME)
     setEmail(decode.EMAIL)
-    console.log(decode)
+    // console.log(decode)
     getKategori()
   }, [])
   return (

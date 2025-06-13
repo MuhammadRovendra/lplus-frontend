@@ -1,27 +1,39 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation, useParams, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 import { FaAddressCard, FaClipboardList } from "react-icons/fa";
+import { GoPasskeyFill } from 'react-icons/go';
 import { MdLogout } from 'react-icons/md';
 import ServiceUser from '../../api/service/User.service';
+import { jwtDecode } from 'jwt-decode';
+import { RiAlignItemBottomFill } from 'react-icons/ri';
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const navigate = useNavigate()
-  const {idUser} = useParams()
 
   const [user, setUser] = useState({})
 
   const itemMenuSidebar = [
     {
-      name: "My Learning",
+      name: "Dashboard",
       icon: FaClipboardList ,
-      path: `/profile-page/my-learning/${idUser}`
+      path: `/Admin/dashboard-page`
+    },
+    {
+      name: "Bundle",
+      icon: FaAddressCard,
+      path: `/Admin/bundle-page`
+    },
+    {
+      name: "Materi",
+      icon: RiAlignItemBottomFill,
+      path: `/Admin/materi-page`
     },
     {
       name: "Setting Account",
-      icon: FaAddressCard,
-      path: `/profile-page/setting-user/${idUser}`
+      icon: GoPasskeyFill,
+      path: `/Admin/Account-setting`
     },
   ]
 
@@ -31,15 +43,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const trigger = useRef(null);
   const sidebar = useRef(null);
 
-  const getUser = async () => {
-    try {
-      const token = localStorage.getItem('accessToken')
-      const response = await ServiceUser.getUserById(idUser, token)
-      setUser(response.data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // const getUser = async () => {
+  //   try {
+  //     const token = localStorage.getItem('accessToken')
+  //     const response = await ServiceUser.getUserById(idUser, token)
+  //     setUser(response.data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   useEffect(() => {
     const clickHandler = ({ target }) => {
@@ -81,7 +93,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   }
 
   useEffect(() => {
-    getUser()
+    const token = localStorage.getItem('accessToken')
+    const decode = jwtDecode(token)
+    setUser(decode)
   }, [])
   return (
     <aside

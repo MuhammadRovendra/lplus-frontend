@@ -2,7 +2,8 @@ import axios from "axios";
 
 // Membuat instance axios
 export const api = axios.create({
-  baseURL: "https://lplus-api-nine.vercel.app/",
+  baseURL: "http://localhost:3002/",
+  // baseURL: "https://lplus-api-nine.vercel.app/",
   withCredentials: true // Memastikan cookies dikirim dalam setiap request
 });
 

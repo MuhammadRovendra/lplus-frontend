@@ -3,39 +3,47 @@
 @tailwind utilities;
 
 @layer base {
+  html, body, *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   body {
     @apply font-satoshi font-normal text-base text-body bg-whiten relative z-1;
   }
 }
 
 @layer components {
+  /* Komponen Tailwind kustom jika ada */
 }
 
 @layer utilities {
-  /* Chrome, Safari and Opera */
   .text-body {
     font-size: 16px;
     line-height: 1.5;
     color: #333;
   }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .chat-height {
     @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
   }
+
   .inbox-height {
     @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
   }
 }
 
-/* third-party libraries CSS */
+/* ===== CSS tambahan untuk pihak ketiga ===== */
 
 .tableCheckbox:checked ~ div span {
   @apply opacity-100;
@@ -72,13 +80,12 @@
 .apexcharts-yaxistooltip {
   @apply dark:!bg-meta-4 dark:!border-meta-4 dark:!text-bodydark1;
 }
-.apexcharts-xaxistooltip-bottom:after {
-  @apply dark:!border-b-meta-4;
-}
+.apexcharts-xaxistooltip-bottom:after,
 .apexcharts-xaxistooltip-bottom:before {
   @apply dark:!border-b-meta-4;
 }
 
+/* Flatpickr */
 .flatpickr-day.selected {
   @apply bg-primary border-primary hover:bg-primary hover:border-primary;
 }
@@ -86,9 +93,7 @@
 .flatpickr-months .flatpickr-next-month:hover svg {
   @apply fill-primary;
 }
-.flatpickr-calendar.arrowTop:before {
-  @apply dark:!border-b-boxdark;
-}
+.flatpickr-calendar.arrowTop:before,
 .flatpickr-calendar.arrowTop:after {
   @apply dark:!border-b-boxdark;
 }
@@ -102,11 +107,9 @@
 .flatpickr-months .flatpickr-next-month {
   @apply !top-7 dark:!text-white dark:!fill-white;
 }
-.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,
-.flatpickr-months .flatpickr-next-month.flatpickr-prev-month {
+.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month {
   @apply !left-7;
 }
-.flatpickr-months .flatpickr-prev-month.flatpickr-next-month,
 .flatpickr-months .flatpickr-next-month.flatpickr-next-month {
   @apply !right-7;
 }
@@ -119,11 +122,11 @@ span.flatpickr-weekday,
 }
 .flatpickr-day.selected,
 .flatpickr-day.startRange,
-.flatpickr-day.selected,
 .flatpickr-day.endRange {
   @apply dark:!text-white;
 }
 
+/* Map Zoom Button */
 .map-btn .jvm-zoom-btn {
   @apply flex items-center justify-center w-7.5 h-7.5 rounded border border-stroke dark:border-strokedark hover:border-primary dark:hover:border-primary bg-white hover:bg-primary text-body hover:text-white dark:text-bodydark dark:hover:text-white text-2xl leading-none px-0 pt-0 pb-0.5;
 }
@@ -146,6 +149,7 @@ span.flatpickr-weekday,
   @apply left-10;
 }
 
+/* Checkbox tugas */
 .taskCheckbox:checked ~ .box span {
   @apply opacity-100;
 }
@@ -156,6 +160,7 @@ span.flatpickr-weekday,
   @apply bg-primary border-primary dark:border-primary;
 }
 
+/* Custom input tanggal */
 .custom-input-date::-webkit-calendar-picker-indicator {
   background-position: center;
   background-repeat: no-repeat;
@@ -168,33 +173,35 @@ span.flatpickr-weekday,
   background-image: url(./images/icon/icon-arrow-down.svg);
 }
 
+/* Untuk Alpine.js */
 [x-cloak] {
   display: none !important;
 }
 
+/* Tombol mengambang */
 .floating-button {
   position: fixed;
-  bottom: 20px; /* Jarak dari bawah layar */
-  right: 20px;  /* Jarak dari sisi kanan layar */
+  bottom: 20px;
+  right: 20px;
   padding: 20px 20px;
-  background-color: #00c60a; /* Warna latar belakang */
-  color: white; /* Warna teks */
+  background-color: #00c60a;
+  color: white;
   border: none;
-  border-radius: 100%; /* Sudut melengkung */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan */
+  border-radius: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-size: 16px;
   cursor: pointer;
-  z-index: 1000; /* Pastikan tombol tetap di atas elemen lain */
+  z-index: 1000;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .floating-button:hover {
-  background-color: #008c07; /* Warna latar belakang saat hover */
-  transform: scale(1.05); /* Efek zoom saat hover */
+  background-color: #008c07;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
   .bg-mobile {
-    background-position: center center; /* Ubah posisi background image untuk tampilan mobile */
+    background-position: center center;
   }
 }

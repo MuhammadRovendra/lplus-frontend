@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation, useParams, useNavigate } from 'react-router-dom';
 
 import { FaAddressCard, FaClipboardList } from "react-icons/fa";
+import { GoPasskeyFill } from 'react-icons/go';
 import { MdLogout } from 'react-icons/md';
 import ServiceUser from '../../api/service/User.service';
 
@@ -14,14 +15,24 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 
   const itemMenuSidebar = [
     {
-      name: "My Learning",
+      name: "Dashboard",
       icon: FaClipboardList ,
-      path: `/profile-page/my-learning/${idUser}`
+      path: `/Admin/dashboard-page`
+    },
+    {
+      name: "Bundle",
+      icon: FaAddressCard,
+      path: `/Admin/bundle-page`
+    },
+    {
+      name: "Materi",
+      icon: GoPasskeyFill,
+      path: `/profile-page/repassword/${idUser}`
     },
     {
       name: "Setting Account",
-      icon: FaAddressCard,
-      path: `/profile-page/setting-user/${idUser}`
+      icon: GoPasskeyFill,
+      path: `/profile-page/repassword/${idUser}`
     },
   ]
 
